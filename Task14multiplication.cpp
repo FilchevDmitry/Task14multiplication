@@ -7,8 +7,10 @@ int main()
     cout << "Enter the data" << endl;
     float matrixx[4][4];
     vector <float> vec;
+    float sum = 0;
+    int z = 0;
     float R[4][1];
-    cout << "Input vector";
+    cout << "Input vector"<<endl;
     for (int i = 0; i < 4; i++)
     {
         int a = 0;
@@ -23,16 +25,23 @@ int main()
             cin >> matrixx[i][j];
         }
     }
+    cout << endl;
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            sum += matrixx[i][j] * vec[j];
+        }
+        R[i][z] = sum;
+        sum = 0;
+    }
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 1; j++)
         {
-            for (int k = 0; k < 4; k++)
-            {
-                R[i][j] = vec[k] * matrixx[i][k];
-            }
+            cout << R[i][j] << " ";
         }
+        cout << endl;
     }
-
 }
 
